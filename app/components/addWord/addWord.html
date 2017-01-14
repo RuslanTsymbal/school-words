@@ -1,0 +1,26 @@
+<div ng-show="showPage" class="page-add-word" ng-controller="addWordCtrl">
+    <div class="add-word col-lg-6 col-md-6">
+        <h1>Add the word and its translation</h1>
+        <div class="word-top">
+            <span>Word:</span><input autofocus class="autofocus" ng-model="newWord">
+        </div>
+        <div>
+            <span>Translation:</span> <input ng-model="translation">
+        </div>
+        <button ng-show="showButton" (ng-disabled="!newWord" && ng-disabled="!translation" ) type="submit"
+                ng-click="selectDeck(newMord, translation)" class="btn btn-default my-button">Select deck
+        </button>
+    </div>
+    <div ng-if="showDecks" id="listDecks-addWord" class="list-decks col-lg-6 col-md-6">
+        <h1>My decks:</h1>
+        <ul ng-repeat="deck in listDecks">
+            <li ng-click="addWord(newWord, translation,deck)">{{$index + 1}}) Deck - {{deck}} ,
+                words - {{userLS.decks[deck].words.length}}
+            </li>
+        </ul>
+    </div>
+    <div ng-if="resultAddWord" class="result-addWord col-lg-6 col-md-6">
+        <span>You add words : "{{enterNewWord}}" </span>
+        <span>to the deck -  "{{titleDeck}}."</span>
+    </div>
+</div>

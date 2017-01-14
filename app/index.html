@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title>SCHOOL OF WORDS</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- [if lt IE 9]> -->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <!-- <![endif] -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body ng-controller="parentCtrl">
+<div id="wrapper">
+    <div class="container-fluid">
+        <header id="header">
+            <div class="title col-lg-4 col-md-4">
+                <h1>SCHOOL OF WORDS</h1>
+            </div>
+            <div class="registration col-lg-8 col-md-8">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <form name="myForm" class="form-inline" role="form">
+                    <div ng-show="showForm" class="form-group">
+                        <label class="sr-only" for="name-user">Name-user</label>
+                        <input ng-model="nameUser" type="text" class="form-control" id="name-user"
+                               placeholder="Your name">
+                    </div>
+                    <div ng-show="showForm" class="form-group">
+                        <label class="sr-only" for="password-user">Password-user</label>
+                        <input ng-model="passwordUser" type="password" class="form-control" id="password-user"
+                               placeholder="Password">
+                    </div>
+                    <button ng-show="showForm" ng-disabled="!(nameUser && passwordUser)"
+                            ng-click="saveUser(nameUser, passwordUser)"
+                            type="submit" class="btn btn-default">Sign up
+                    </button>
+                    <button ng-show="showForm" ng-disabled="!(nameUser && passwordUser)"
+                            ng-click="searchUser(nameUser, passwordUser)"
+                            type="submit" class="btn btn-default">Sign in
+                    </button>
+                    <button ui-sref="index" ng-show="showExit" ng-click="exit()" id="button-exit" type="submit"
+                            class="btn btn-default">
+                        Exit
+                    </button>
+                </form>
+            </div>
+            <div ng-show="showUser" class="user-name">
+                <span>User name : {{nameUserLS}} </span>
+            </div>
+        </header><!-- #header -->
+
+        <section ng-show="showApplication" id="field">
+            <div class="my-control">
+                <button ng-click="showPageCreateDeck();addClass1()" ng-class="classNames1" type="button"
+                        ui-sref="create-deck" class="btn btn-default col-lg-2 col-md-2">Create deck
+                </button>
+
+                <button ng-click="showPageAddWord();addClass2()" ng-class="classNames2" type="button" ui-sref="add-word"
+                        class="btn btn-default col-lg-2 col-md-2">Add word
+                </button>
+
+                <button ng-click="showPageStartLearning();addClass3()" ng-class="classNames3" type="button"
+                        ui-sref="start-learning" class="btn btn-default col-lg-2 col-md-2">Start learning
+                </button>
+
+                <button ng-click="showPageMyResults();addClass4()" ng-class="classNames4" type="button"
+                        ui-sref="my-results"
+                        class="btn btn-default col-lg-2 col-md-2">My results
+                </button>
+
+                <button ng-click="showPageRemove();addClass5()" ng-class="classNames5" type="button" ui-sref="remove"
+                        class="btn btn-default col-lg-2 col-md-2">Remove deck
+                </button>
+            </div>
+
+            <div id="view">
+                <ui-view></ui-view>
+            </div>
+
+        </section><!-- #field -->
+    </div><!-- .container-fluid -->
+</div><!-- #wrapper -->
+<section id="footer">
+    <span>- SCHOOL OF WORDS -</span>
+</section>
+<!-- Preload  -->
+<div id="hellopreloader"></div>
+<div id="hellopreloader_preload"></div>
+<script src="js/index.js"></script>
+</body>
+</html>

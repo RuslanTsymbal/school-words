@@ -1,0 +1,55 @@
+<div id="learning" ng-show="showPage" ng-controller="startLearningCtrl">
+    <div ng-if="showHaveDecks">
+        <div ng-if="showlistDecks" class="list-decks col-lg-6 col-md-6">
+            <h1>Choose a deck to study</h1>
+            <ul ng-repeat="deck in listDecks">
+                <li ng-click="startLesson(userLS.decks[deck].words, deck)">{{$index + 1}}) Deck - {{deck}}, words -
+                    {{userLS.decks[deck].words.length}}
+                </li>
+            </ul>
+        </div>
+        <div id="screen" ng-if="showWordsUser" class="lesson">
+            <div class="school row">
+                <div class="early col-lg-2 col-md-2">
+                    <button ng-click="back()" type="submit" class="back-btn btn btn-default my-button"><i
+                            class="fa fa-arrow-left" aria-hidden="true"></i>Back
+                    </button>
+                </div>
+                <div class="words col-lg-8 col-md-8">
+                    <span class="numberWord name-deck">DECK - "{{deck}}"</span>
+
+                    <div class="row">
+                        <span class="numberWord col-lg-4 col-md-4 col-md-offset-4 col-lg-offset-4">Word - {{number+1}}</span>
+                        <button type="submit" ng-click="stopLesson()"
+                                class="stop-lesson col-lg-4 col-md-4 btn btn-default my-button">Stop Lesson
+                        </button>
+                    </div>
+                    <span class="myWord">{{word}}</span>
+
+                    <div class="button-learning">
+                        <button type="submit" ng-click="showTranslation()"
+                                class="translation btn btn-default my-button">
+                            I DO NOT KNOW
+                        </button>
+                        <button type="submit" ng-click="showTranslation(); addResult(nameUserLS, deck ,word)"
+                                class="translation btn btn-default my-button">
+                            I KNOW
+                        </button>
+                    </div>
+                    <span ng-show="showTranslationWord" class="myWord">{{translationWord}}</span>
+                    <button ng-show="showTranslationWord" ng-click="deleteWord(number, word)" type="submit"
+                            class="delete btn btn-default my-button">DELETE WORD
+                    </button>
+                </div>
+                <div class="next col-lg-2 col-md-2">
+                    <button ng-click="next()" type="submit" class="next-btn btn btn-default my-button">Next<i
+                            class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="no-decks" ng-if="showNoDecks">
+        <span>You do not have decks.</span>
+    </div>
+</div>

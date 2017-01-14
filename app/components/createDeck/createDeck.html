@@ -1,0 +1,23 @@
+<div ng-show="showPage" id="create-deck" ng-controller="createDeckCtrl">
+    <div class="col-lg-6 col-md-6">
+        <div class="crDesk">
+            <p>Enter the new name of the deck</p>
+            <input class="autofocus" ng-model="titleDeck">
+        </div>
+        <button ng-disabled="!titleDeck" type="submit" class="btn btn-default my-button"
+                ng-click="saveTitleDeck(titleDeck);getMyDeck()">Save
+        </button>
+        <div class="message" ng-show="showTitleDeck">
+            <span>Уou are creating a new deck.</span>
+            <span>"{{showNameDeck}}".</span>
+        </div>
+    </div>
+    <div ng-if="showDecks_creareDecks_1" class="list-decks col-lg-6 col-md-6">
+        <p>You do not have decks.</p>
+    </div>
+    <div ng-if="showDecks_creareDecks_2" class="list-decks col-lg-6 col-md-6">
+        <ul ng-repeat="deck in listDecks">
+            <li>{{$index + 1}}) Deck - {{deck}}, words - {{userLS.decks[deck].words.length}}</li>
+        </ul>
+    </div>
+</div>

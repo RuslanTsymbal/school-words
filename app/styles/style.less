@@ -1,0 +1,551 @@
+/*SCHOOL OF WORDS*/
+@import "../../node_modules/bootstrap-less/bootstrap/bootstrap.less";
+
+/*fonts*/
+
+@import "../font/segoe_ui/stylesheet.css";
+@import "../font/аdventure/stylesheet.css";
+
+/*---Colors---*/
+
+@color-white: #fff;
+@color-black: #000;
+@color-red: red;
+@color-green: green;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Segoe UI";
+  padding-top: 0;
+  line-height: 2rem;
+}
+
+/*--- Preload ---*/
+
+#hellopreloader_preload {
+  display: block;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 1000px;
+  background: #000000 url(http://hello-site.ru//main/images/preloads/bars.svg) center center no-repeat;
+  background-size: 60px;
+}
+
+.container-fluid {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 15px;
+  background-color: @color-black;
+}
+
+#wrapper {
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  background-position: 50% 100%;
+  padding-top: 1.3%;
+  min-height: 687px;
+}
+
+.my-button {
+  font-weight: 600;
+  background-color: @color-black;
+  color: @color-white;
+  width: 80px;
+  border-radius: 6px;
+  padding: 5px 8px 5px 8px;
+}
+
+.my-button:hover {
+  background-color: @color-white;
+  color: @color-black;
+  transition: 0.5s;
+}
+
+.background-button {
+  background-color: @color-black;
+  color: @color-white;
+  border: 1px solid @color-white;
+}
+
+/*---header---*/
+
+header#header {
+  padding-bottom: 13%;
+  padding-top: 1%;
+  height: 100px;
+  color: @color-white;
+  .title {
+    padding: 0;
+    h1 {
+      margin: 5% 0 2% 0;
+      font-family: "Adventure";
+      font-size: 3.5rem;
+      font-weight: 800;
+    }
+  }
+
+  .registration {
+    margin-top: 1.5%;
+    overflow: hidden;
+    padding-right: 0;
+    text-align: right;
+    .checkbox {
+      margin: 0 1% 0 1%;
+    }
+
+    .fa-graduation-cap {
+      float: left;
+      display: block;
+      padding-top: 0.5%;
+      font-size: 3rem;
+    }
+  }
+  #button-comeIn, #button-exit {
+    padding-left: 3px;
+    padding-right: 3px;
+    width: 65px;
+  }
+  button {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  button:hover {
+    background-color: @color-black;
+    color: @color-white;
+    transition: 0.5s;
+  }
+
+  .btn-default:focus {
+    background-color: @color-black;
+    color: @color-white;
+    border: 1px solid @color-white;
+  }
+  .checkbox {
+    font-family: "Adventure";
+  }
+
+  .user-name {
+    color: @color-white;
+    font-weight: 500;
+    border-bottom: 1px solid @color-white;
+    padding-left: 0;
+    padding-top: 2.5%;
+    float: right;
+    padding-right: 15px;
+    text-transform: uppercase;
+  }
+}
+
+/*---#field---*/
+
+#field {
+  .my-control {
+    overflow: auto;
+
+    button {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-right: 4.1%;
+    }
+    button:hover {
+      background-color: @color-black;
+      color: @color-white;
+      transition: 0.5s;
+    }
+
+    .btn-default:focus {
+      background-color: @color-black;
+      color: @color-white;
+      border: 1px solid @color-white;
+    }
+    button:nth-last-child(1) {
+      margin-right: 0;
+    }
+  }
+}
+
+#view {
+  background-color: white;
+  min-height: 688px;
+  padding-top: 3%;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-top: 2%;
+  margin-bottom: 4%;
+  border-radius: 10px;
+}
+
+/*---#footer---*/
+
+#footer {
+  padding: 1% 0 1% 0;
+  text-align: center;
+  background-color: @color-black;
+  span {
+    color: @color-white;
+    font-family: "Adventure";
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}
+
+/*---#create-deck---*/
+
+#create-deck {
+
+  span.ng-binding {
+    color: @color-black;
+    font-family: "Segoe UI";
+  }
+  p {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 6%;
+  }
+  input {
+    display: block;
+    margin-bottom: 2%;
+    float: left;
+    margin-right: 3%;
+  }
+  .message {
+    font-size: 1.5rem;
+    height: 20px;
+    overflow: hidden;
+    margin-top: 7%;
+    padding-bottom: 30%;
+    span {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: @color-black;
+    }
+    span:nth-last-child(1) {
+      color: cornflowerblue;
+      text-transform: uppercase;
+    }
+  }
+  .crDesk {
+    overflow: hidden;
+    margin-bottom: 5%
+  }
+  .btn-default[disabled] {
+    background-color: @color-black !important;
+  }
+
+  .btn-default:focus{
+    background-color: @color-black;
+    color: @color-white;
+    outline: none;
+  }
+}
+
+.list-decks {
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0 !important;
+  }
+
+  ul {
+    padding-left: 0;
+    margin-top: 3%;
+    li {
+      font-weight: 600;
+      list-style-type: none;
+      border: 1px solid black;
+      background-color: @color-black;
+      color: @color-white;
+      margin-bottom: 0.5%;
+      padding: 1% 0 0 4%;
+      border-radius: 14px;
+      width: 80%;
+      padding-bottom: 1%;
+    }
+  }
+}
+
+/*---.add-word---*/
+
+.page-add-word {
+  overflow: hidden;
+}
+
+.add-word {
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 0;
+  }
+  span {
+    display: block;
+    float: left;
+    font-weight: 500;
+    width: 86px;
+  }
+  input {
+    display: block;
+  }
+  .word-top {
+    margin-bottom: 3%;
+    margin-top: 6%;
+  }
+  .btn-default {
+    margin-top: 7%;
+    margin-left: 19%;
+    width: 90px;
+  }
+  .btn-default[disabled] {
+    background-color: @color-black !important;
+  }
+}
+
+#listDecks-addWord {
+  ul {
+    li:hover {
+      cursor: pointer;
+      background-color: @color-white;
+      color: @color-black;
+    }
+  }
+}
+
+.result-addWord {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 0;
+  span {
+    display: block;
+    margin-bottom: 3%;
+  }
+}
+
+/*---#learning---*/
+
+#learning{
+  ul{
+    li:hover{
+      cursor: pointer;
+      background-color: @color-white;
+      color: @color-black;
+    }
+  }
+}
+#screen{
+  .btn-default:focus{
+    background-color: @color-black;
+    color: @color-white;
+    outline: 5px aliceblue;
+  }
+  .btn-default:visited, .btn-default:active {
+    border: none;
+  }
+  .school{
+    span{
+      display: block;
+    }
+    .words {
+      text-align: center;
+      .row{
+        overflow: hidden;
+      }
+      .myWord{
+        font-weight: 700;
+        font-size: 4rem;
+        margin-bottom: 4%;
+        text-transform: uppercase;
+        margin-top: 33px;
+      }
+      .translation{
+        width: 200px;
+        display: block;
+        float: left;
+      }
+      .name-deck{
+        width: 50%;
+        margin: 0 auto;
+        background-color: green;
+        border: none;
+      }
+    }
+  }
+}
+.translation:nth-child(1){
+  margin-right: 9px;
+}
+
+.button-learning{
+  overflow: hidden;
+  width: 69.3%;
+  margin: 0 auto;
+}
+i.fa.fa-arrow-right {
+  padding-left: 7px;
+}
+
+i.fa.fa-arrow-left {
+  padding-right: 7px;
+}
+
+.numberWord{
+  font-size: 1.5rem;
+  padding: 5px 0 5px 0;
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  background-color: green;
+}
+
+.back-btn, .next-btn{
+  margin-top: 110%;
+}
+.next-btn{
+  text-align: right;
+}
+.delete{
+  width: 130px;
+  display: block;
+  margin: 0 auto;
+}
+
+.deck-school{
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 5px 0;
+}
+.stop-lesson{
+  float: right;
+  width: 100px;
+  color:white;
+  background-color: red;
+  //position: absolute;
+  //top: 0px;
+  //right: -113px;
+}
+.stop-lesson:hover{
+  color: red;
+  background-color: white;transition: 0.5s;
+}
+
+/*---.remove-decks---*/
+
+#remove-decks {
+   span {
+     font-size: 2rem;
+     font-weight: 500;
+     margin-bottom: 3.3%;
+     display: block;
+  }
+  .btn-default[disabled] {
+    background-color: @color-black !important;
+  }
+   ul{
+    li:hover{
+      cursor: pointer;
+      background-color: @color-red;
+      color: @color-white;
+      transition: 0.5s;
+    }
+  }
+  .remove-all {
+    button.btn {
+      margin-left: 10%;
+    }
+      .button-remove:hover{
+        background-color: @color-red!important;
+        color: @color-white!important;
+      }
+    }
+
+  i{
+    margin-right: 2%;
+  }
+
+}
+
+.elaboration{
+  span{
+    display: block;
+    text-align: center;
+  }
+  .button-remove{
+    background-color: @color-red;
+    color: @color-white;
+    margin-right: 20px;
+  }
+  .button-remove:hover{
+    background-color: @color-white;
+    color: @color-red;
+  }
+  .remove-no{
+    background-color: @color-green;
+    color: @color-white;
+  }
+  .remove-no:hover{
+    background-color: @color-white;
+    color: @color-green;
+  }
+}
+.but-del{
+  width: 184px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.no-decks{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/*---.my-result---*/
+
+.my-result{
+  h1{
+    font-size: 2rem;
+    font-weight: 500;
+  }
+   span{
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
+
+.my-result{
+
+  .result_1{
+    display: block;
+    width: 40px;
+    height: 22px;
+    background-color: rgba(151,187,205,1);
+    float: left;
+    margin-bottom: 2%;
+    margin-right: 8px;
+    opacity: 0.5;
+  }
+
+  .result_2{
+    display: block;
+    width: 40px;
+    height: 22px;
+    background-color: rgba(220,220,220,1);
+    float: left;
+    margin-right: 8px;
+    opacity: 0.5;
+  }
+
+  .color-left{
+    padding-left: 42px;
+  }
+}
+
+
+@import "media.less";

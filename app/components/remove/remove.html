@@ -1,0 +1,47 @@
+<div id="remove-decks" ng-show="showPage" ng-controller="removeCtrl">
+    <div ng-if="showHaveDecks">
+        <div ng-if="showDecksRemove">
+            <div class="list-decks col-lg-6 col-md-6">
+                <span>Select the deck to remove</span>
+                <ul ng-repeat="deck in listDecks">
+                    <li ng-click="questionOnDeck(deck)"><i class="fa fa-trash" aria-hidden="true"></i>{{$index + 1}})
+                        Deck - {{deck}}, words - {{userLS.decks[deck].words.length}}
+                    </li>
+                </ul>
+            </div>
+            <div class="remove-all col-lg-6 col-md-6">
+                <span>"Remove all deck?"</span>
+                <button type="submit" class="button-remove btn btn-default my-button" ng-click="questionAllDecks()">
+                    Yes
+                </button>
+            </div>
+        </div>
+        <div ng-if="showElaboration_1" class="elaboration">
+            <span>You want to delete deck - "{{deckRemove}}"?</span>
+
+            <div class="but-del">
+                <button type="submit" class="button-remove btn btn-default my-button"
+                        ng-click="yesDeleteOneDeck(nameUserLS)">Yes
+                </button>
+                <button type="submit" class="remove-no btn btn-default my-button" ng-click="noDelete()">No</button>
+            </div>
+        </div>
+        <div ng-if="showElaboration_2" class="elaboration">
+            <span>Are you sure you want to delete all of the decks?</span>
+            <div class="but-del">
+                <button type="submit" class="button-remove btn btn-default my-button"
+                        ng-click="yesDeleteAllDecks(nameUserLS)">Yes
+                </button>
+                <button type="submit" class="remove-no btn btn-default my-button" ng-click="noDelete()">No</button>
+            </div>
+        </div>
+        <div class="no-decks" ng-if="ifNoDecks">
+            <span>You do not have decks.</span>
+        </div>
+    </div>
+    <div class="no-decks" ng-if="showNoDecks">
+        <span>You do not have decks.</span>
+    </div>
+</div>
+
+

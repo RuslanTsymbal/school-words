@@ -1,0 +1,20 @@
+<div class="my-result" ng-controller="myResultsCtrl" ng-show="showPage">
+    <div ng-if="showResult">
+        <div>
+            <div class="color-left col-lg-6 col-md-6">
+                <span class="result_1"></span>
+                <p>The number of words in the deck.</p>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <span class="result_2"></span>
+                <p>The number of words learned.</p>
+            </div>
+        </div>
+        <canvas id="base" class="chart-horizontal-bar"
+                chart-data="data" chart-labels="labels">
+        </canvas>
+    </div>
+    <div ng-if="showNoResult">
+        <span>You do not have the results. Start training.</span>
+    </div>
+</div>
